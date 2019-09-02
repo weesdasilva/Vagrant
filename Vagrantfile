@@ -14,6 +14,9 @@ Vagrant.configure("2") do |config|
   mv /home/vagrant/key /root/.ssh/id_rsa
 
   chmod 600 /root/.ssh/id_rsa
+
+  sed -i 's/^#PermitRootLogin/PermitRootLogin/' /etc/ssh/sshd_config
+  sed -i 's/ChallengeResponseAuthentication\ no/ChallengeResponseAuthentication\ yes/' /etc/ssh/sshd_config
   SHELL
 
   # Machine 01
