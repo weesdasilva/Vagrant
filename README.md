@@ -1,2 +1,2 @@
-#Vaggrantfile
-Arquivo responsável por iniciar 2 machines, Centos/Debian
+#Vagrantfile
+#Arquivo responsável por iniciar 2 machines, Centos/Debian
