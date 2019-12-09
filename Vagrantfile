@@ -4,8 +4,8 @@
 Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
-  echo "192.168.200.10 centos.exemplo.com centos" >> /etc/hosts
-  echo "192.168.200.11 debian.exemplo.com debian" >> /etc/hosts
+  echo "10.10.0.1 centos.exemplo.com centos" >> /etc/hosts
+  echo "10.10.0.2 debian.exemplo.com debian" >> /etc/hosts
   SHELL
 
   # Machine 01
@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
     centos.vm.hostname = "centos"
     centos.vm.box = "centos/7"
     centos.vm.box_check_update = false
-    centos.vm.network "private_network",ip: "192.168.200.10", dns:"8.8.8.8"
+    centos.vm.network "private_network",ip: "10.10.0.1", dns:"8.8.8.8"
   end
 
   #Machine 02
@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
     debian.vm.hostname = "debian"
     debian.vm.box = "debian/buster64"
     debian.vm.box_check_update = false
-    debian.vm.network "private_network",ip: "192.168.200.11", dns:"8.8.8.8"
+    debian.vm.network "private_network",ip: "10.10.0.2", dns:"8.8.8.8"
   end
 
   config.vm.provision "shell", path: "script.sh"
