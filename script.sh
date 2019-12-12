@@ -8,6 +8,7 @@
   cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
 
 # Instalando o docker.
+  if [ $(hostname) == "centos" ] ; then yum install wget -y ; else echo""; fi
   wget get.docker.io -O /tmp/docker.sh ; bash /tmp/docker.sh
 
   exec bash
