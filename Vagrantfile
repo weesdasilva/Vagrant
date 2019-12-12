@@ -14,6 +14,7 @@ Vagrant.configure("2") do |config|
       vb.memory=512
       vb.customize ["modifyvm", :id, "--groups", "/Machines"]
     end
+
     centos.vm.hostname = "centos"
     centos.vm.box = "centos/7"
     centos.vm.box_check_update = false
@@ -24,6 +25,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "Debian" do |debian|
     debian.vm.provider "virtualbox" do |vb|
       vb.memory=1024
+      vb.customize ["modifyvm", :id, "--groups", "/Machines"]
     end
     debian.vm.hostname = "debian"
     debian.vm.box = "debian/buster64"
