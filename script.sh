@@ -8,9 +8,11 @@
   cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
 
 # Instalando o docker.
-  curl -fsSL get.docker.com | bash 
+  wget get.docker.io -O /tmp/docker.sh ; bash /tmp/docker.sh
+
+  exec bash
 
   #Docker Compose
-  curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-  chmod +x /usr/local/bin/docker-compose
+  sudo wget https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -O /usr/local/bin/docker-compose &>/dev/null
+  sudo chmod +x /usr/local/bin/docker-compose
 

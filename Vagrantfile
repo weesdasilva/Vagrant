@@ -23,6 +23,7 @@ Vagrant.configure("2") do |config|
 
   #Machine 02
   config.vm.define "Debian" do |debian|
+
     debian.vm.provider "virtualbox" do |vb|
       vb.memory=1024
       vb.customize ["modifyvm", :id, "--groups", "/Machines"]
