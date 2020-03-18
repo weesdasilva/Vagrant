@@ -4,8 +4,8 @@
 Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
-  echo "10.10.0.1 centos.exemplo.com centos" >> /etc/hosts
-  echo "10.10.0.2 debian.exemplo.com debian" >> /etc/hosts
+  echo "10.10.0.2 centos.exemplo.com centos" >> /etc/hosts
+  echo "10.10.0.3 debian.exemplo.com debian" >> /etc/hosts
   SHELL
 
   # Machine 01
